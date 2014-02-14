@@ -83,3 +83,10 @@ module.exports = function($stateProvider) {
   .config(require('./states'));
 ```
 
+---
+
+Check out the package-page2 branch of this repository to see how to 
+create a npm micro-app module.
+
+
+
