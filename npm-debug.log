@@ -1,0 +1,29 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'run', 'build' ]
+2 info using npm@1.2.17
+3 info using node@v0.10.3
+4 verbose read json /Users/twilson63/play/myapp2/package.json
+5 verbose run-script [ 'prebuild', 'build', 'postbuild' ]
+6 info prebuild myapp2@0.0.0
+7 info build myapp2@0.0.0
+8 verbose unsafe-perm in lifecycle true
+9 silly exec sh "-c" "browserify -t brfs app/app.js public/bundle.js"
+10 silly sh,-c,browserify -t brfs app/app.js public/bundle.js,/Users/twilson63/play/myapp2 spawning
+11 info myapp2@0.0.0 Failed to exec build script
+12 error myapp2@0.0.0 build: `browserify -t brfs app/app.js public/bundle.js`
+12 error `sh "-c" "browserify -t brfs app/app.js public/bundle.js"` failed with 1
+13 error Failed at the myapp2@0.0.0 build script.
+13 error This is most likely a problem with the myapp2 package,
+13 error not with npm itself.
+13 error Tell the author that this fails on your system:
+13 error     browserify -t brfs app/app.js public/bundle.js
+13 error You can get their info via:
+13 error     npm owner ls myapp2
+13 error There is likely additional logging output above.
+14 error System Darwin 13.0.0
+15 error command "node" "/usr/local/bin/npm" "run" "build"
+16 error cwd /Users/twilson63/play/myapp2
+17 error node -v v0.10.3
+18 error npm -v 1.2.17
+19 error code ELIFECYCLE
+20 verbose exit [ 1, true ]

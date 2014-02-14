@@ -1,0 +1,22 @@
+{
+  "name": "myapp2",
+  "version": "0.0.0",
+  "scripts": {
+    "install": "napa",
+    "build": "browserify -t brfs app/app.js public/bundle.js",
+    "start": "cd public && w3",
+    "test": "mocha",
+    "watch": "watchify -t brfs app/app.js -o public/bundle.js"
+  },
+  "napa": {
+    "angular": "angular/bower-angular",
+    "ui-router": "angular-ui/ui-router"
+  },
+  "devDependencies": {
+    "brfs": "~0.2.1",
+    "watchify": "~0.6.1"
+  },
+  "dependencies": {
+    "browserify": "~3.29.0"
+  }
+}
