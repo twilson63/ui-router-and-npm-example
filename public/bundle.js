@@ -1,22 +1,19 @@
 ;(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 require('angular/angular');
+require('page2/bundle');
 
 angular.module('myapp', [
-  require('ui-router/release/angular-ui-router')
+  require('ui-router/release/angular-ui-router'),
+  'myapp.page2'
 ]).config(require('./states'));
 
 
-},{"./states":4,"angular/angular":5,"ui-router/release/angular-ui-router":6}],2:[function(require,module,exports){
+},{"./states":3,"angular/angular":4,"page2/bundle":5,"ui-router/release/angular-ui-router":7}],2:[function(require,module,exports){
 module.exports = function($scope) {
   $scope.foo = 'Home Page';
 };
 
 },{}],3:[function(require,module,exports){
-module.exports = function($scope) {
-  $scope.foo = 'Page2 Foo Bar';
-};
-
-},{}],4:[function(require,module,exports){
 var fs = require('fs');
 
 module.exports = function($stateProvider) {
@@ -25,15 +22,10 @@ module.exports = function($stateProvider) {
       url: '/',
       controller: require('./controllers/main'),
       template:  "<h1>{{foo}}</h1>\n"
-    })
-    .state('state2', {
-      url: '/page2',
-      controller: require('./controllers/page2'),
-      template: "<h1>{{foo}}</h1>\n"
     });
 };
 
-},{"./controllers/main":2,"./controllers/page2":3,"fs":7}],5:[function(require,module,exports){
+},{"./controllers/main":2,"fs":8}],4:[function(require,module,exports){
 /**
  * @license AngularJS v1.2.13-build.2263+sha.31c450b
  * (c) 2010-2014 Google, Inc. http://angularjs.org
@@ -20869,7 +20861,38 @@ var styleDirective = valueFn({
 })(window, document);
 
 !angular.$$csp() && angular.element(document).find('head').prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\\:form{display:block;}</style>');
-},{}],6:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
+;(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+module.exports = function($scope) {
+  $scope.foo = 'Page 2 comming form page2 module ';
+};
+
+
+},{}],2:[function(require,module,exports){
+var fs = require('fs');
+
+angular.module('myapp.page2', [])
+  .config(function($stateProvider) {
+    $stateProvider
+      .state('state2', {
+        url: '/state2',
+        controller: require('./controller.js'),
+        template: "<h1>{{foo}}</h1>\n"
+      });
+  });
+
+},{"./controller.js":1,"fs":3}],3:[function(require,module,exports){
+// nothing to see here... no file methods for the browser
+
+},{}]},{},[2])
+;
+},{"./controller.js":6,"fs":8}],6:[function(require,module,exports){
+module.exports = function($scope) {
+  $scope.foo = 'Page 2 comming form page2 module ';
+};
+
+
+},{}],7:[function(require,module,exports){
 /**
  * State-based routing for AngularJS
  * @version v0.2.8
@@ -23527,7 +23550,7 @@ angular.module('ui.router.compat')
   .provider('$route', $RouteProvider)
   .directive('ngView', $ViewDirective);
 })(window, window.angular);
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 // nothing to see here... no file methods for the browser
 
 },{}]},{},[1])
